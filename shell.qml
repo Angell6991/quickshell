@@ -36,9 +36,10 @@ PanelWindow {
             bottomLeftRadius: 15
             anchors.left: parent.left
             anchors.leftMargin: 5
-            anchors.verticalCenter: top.verticalCenter
+            anchors.top: parent.top
 
             Text {
+                id: dayOfWeekText
                 anchors.centerIn: parent
                 anchors.horizontalCenter: parent
                 font.family: "frank"
@@ -66,7 +67,7 @@ PanelWindow {
             color: Qt.rgba(46/255, 46/255, 46/255, 0) 
             bottomLeftRadius: 15
             anchors.right: parent.right
-            anchors.verticalCenter: top.verticalCenter
+            anchors.top: parent.top
             
             Row {
                 anchors.centerIn: parent
@@ -74,6 +75,7 @@ PanelWindow {
                 spacing: 25
 
                 Text {
+                    id: dateText
                     font.family: "frank"
                     font.pixelSize: 10
                     color: "#e2e2e2"
@@ -81,6 +83,7 @@ PanelWindow {
                 }
 
                 Text {
+                    id: timeText
                     font.family: "frank"
                     font.pixelSize: 10
                     color: "#e2e2e2"
