@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+
 PanelWindow {
 
     implicitHeight: 20
@@ -22,8 +23,8 @@ PanelWindow {
         height: 100
         anchors.centerIn: parent
         anchors.fill:   parent
-        color: "#2e2e2e"
-        // color: Qt.rgba(46/255, 46/255, 46/255, 0.5) 
+        // color: "#2e2e2e"
+        color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
         bottomLeftRadius: 15
 
         ///---------------inf_date------------------///
@@ -61,7 +62,8 @@ PanelWindow {
         Rectangle {
             width: 200
             height: 15
-            color: "#2e2e2e"
+            // color: "#2e2e2e"
+            color: Qt.rgba(46/255, 46/255, 46/255, 0) 
             bottomLeftRadius: 15
             anchors.right: parent.right
             anchors.verticalCenter: top.verticalCenter
@@ -120,8 +122,31 @@ PanelWindow {
             height: 100
             anchors.centerIn: parent
             anchors.fill:   parent
-            color: "#2e2e2e"
+            color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
             topRightRadius: 15
+            
+            Rectangle {
+                width: 150
+                height: 15
+                color: "#e2e2e2"
+                topRightRadius: 15
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+            }
+
+            Rectangle {
+                width: 200
+                height: 15
+                color: Qt.rgba(46/255, 46/255, 46/255, 0) 
+                topRightRadius: 15
+                topLeftRadius: 15
+                anchors.right: parent.right
+                anchors.rightMargin: 5
+                anchors.bottom: parent.bottom
+            }
+
+
+
         }
 
     }
