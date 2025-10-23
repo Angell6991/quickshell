@@ -11,6 +11,7 @@ Row {
         id: scriptOutput
         font.family: "frank"
         font.pixelSize: 12
+        color: "#2e2e2e"
 
         Process {
             id: myScriptProcess
