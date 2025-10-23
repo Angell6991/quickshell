@@ -10,8 +10,8 @@ Row {
     Text {
         id: scriptOutput
         font.family: "frank"
-        font.pixelSize: 12
-        color: "#2e2e2e"
+        font.pixelSize: 10
+        color: "#e2e2e2"
 
         Process {
             id: myScriptProcess
@@ -40,3 +40,5 @@ Row {
     }
 
 }
+
+

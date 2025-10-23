@@ -78,28 +78,51 @@ PanelWindow {
             color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
             topRightRadius: 15
 
-            ///--------------inf_battery----------------///
-            Rectangle {
-                width: 150
-                height: 15
-                color: "#e2e2e2"
-                topRightRadius: 15
-                anchors.left: parent.left
-                anchors.bottom: parent.bottom    
-                
-                Battery_indicator{}     
-            }
-
-            ///-----------------------------------------///
-            Rectangle {
-                width: 200
-                height: 15
-                color: Qt.rgba(46/255, 46/255, 46/255, 0) 
-                topRightRadius: 15
-                topLeftRadius: 15
-                anchors.right: parent.right
-                anchors.rightMargin: 5
+            Row{
                 anchors.bottom: parent.bottom
+                anchors.rightMargin: 5
+                spacing: 5
+
+                ///--------------inf_battery----------------///
+                Rectangle {
+                    width: 70
+                    height: 15
+                    color: Qt.rgba(226/255, 226/255, 46/255, 0) 
+                    topRightRadius: 15
+                    // anchors.left: parent.left
+                    // anchors.bottom: parent.bottom
+                    Battery_indicator{}
+                }
+
+                ///-------------power_menu------------------///
+                Rectangle {
+                    width: 160
+                    height: 15
+                    color: Qt.rgba(226/255, 226/255, 46/255, 0) 
+                    topRightRadius: 15
+                    topLeftRadius: 15
+                    // anchors.centerIn: parent
+                    // anchors.bottom: parent.bottom
+                }
+
+                ///--------------inf_distro-----------------///
+                Rectangle {
+                    width: 120
+                    height: 15
+                    color: Qt.rgba(226/255, 226/255, 266/255, 1) 
+                    topRightRadius: 15
+                    topLeftRadius: 15
+                    // anchors.right: parent.right
+                    // anchors.bottom: parent.bottom
+                     
+                    Text{
+                        anchors.centerIn:   parent
+                        font.family: "frank"
+                        font.pixelSize: 10
+                        color: "#2e2e2e"
+                        text: "arch"
+                    }
+                }
             }
 
         }

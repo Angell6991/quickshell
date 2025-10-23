@@ -5,20 +5,22 @@ status=$(cat /sys/class/power_supply/BAT0/status)
 
 
 if      [ "$status" = "Full" ]; then
-    echo "󱈑 $battery  "
+    echo "··  $battery  ··"
 
 
 elif    [ "$status" = "Not charging" ]; then
-    echo "󰂃 $battery  "
+    echo "¿¿  $battery  ??"
 
 
 elif    [ "$status" = "Charging" ]; then
-    echo "󰂄 $battery  "
+    echo "+  $battery  +"
 
 
 elif    [ "$status" = "Discharging" ]; then
-    echo "󰂀 $battery  "
+    echo "-  $battery  -"
 
 
 fi
 
+
+# echo "$battery"
