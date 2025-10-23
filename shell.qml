@@ -2,6 +2,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 
+import  "modules" 
 
 PanelWindow {
 
@@ -23,7 +24,6 @@ PanelWindow {
         height: 100
         anchors.centerIn: parent
         anchors.fill:   parent
-        // color: "#2e2e2e"
         color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
         bottomLeftRadius: 15
 
@@ -37,70 +37,20 @@ PanelWindow {
             anchors.left: parent.left
             anchors.leftMargin: 5
             anchors.top: parent.top
-
-            Text {
-                id: dayOfWeekText
-                anchors.centerIn: parent
-                anchors.horizontalCenter: parent
-                font.family: "frank"
-                font.pixelSize: 10
-                color: "#2e2e2e"
-                text: Qt.formatDate(new Date(), "dddd").toLowerCase()
-            }
-
-            Timer {
-                interval: 1000
-                running: true
-                repeat: true
-                onTriggered: {
-                    var currentDate = new Date()
-                    dayOfWeekText.text = Qt.formatDate(currentDate, "dddd").toLowerCase()
-                }
-            }
+            
+            Data_name_day{}
         }
 
         ///-------------inf_day_hours---------------///
         Rectangle {
             width: 200
             height: 15
-            // color: "#2e2e2e"
             color: Qt.rgba(46/255, 46/255, 46/255, 0) 
             bottomLeftRadius: 15
             anchors.right: parent.right
             anchors.top: parent.top
-            
-            Row {
-                anchors.centerIn: parent
-                anchors.horizontalCenter: parent
-                spacing: 25
 
-                Text {
-                    id: dateText
-                    font.family: "frank"
-                    font.pixelSize: 10
-                    color: "#e2e2e2"
-                    text: Qt.formatDate(new Date(), "dd · MM · yyyy")
-                }
-
-                Text {
-                    id: timeText
-                    font.family: "frank"
-                    font.pixelSize: 10
-                    color: "#e2e2e2"
-                    text: Qt.formatTime(new Date(), "hh : mm")
-                }            
-            }
-
-            Timer {
-                interval: 1000
-                running: true
-                repeat: true
-                onTriggered: {
-                    var currentDate = new Date()
-                    timeText.text = Qt.formatTime(currentDate, "hh : mm")
-                    dateText.text = Qt.formatDate(currentDate, "dd · MM · yyyy")
-                }
-            }
+            Data_day_clock{}
         }
 
 
@@ -127,16 +77,20 @@ PanelWindow {
             anchors.fill:   parent
             color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
             topRightRadius: 15
-            
+
+            ///--------------inf_battery----------------///
             Rectangle {
                 width: 150
                 height: 15
                 color: "#e2e2e2"
                 topRightRadius: 15
                 anchors.left: parent.left
-                anchors.bottom: parent.bottom
+                anchors.bottom: parent.bottom    
+                
+                Battery_indicator{}     
             }
 
+            ///-----------------------------------------///
             Rectangle {
                 width: 200
                 height: 15
@@ -147,8 +101,6 @@ PanelWindow {
                 anchors.rightMargin: 5
                 anchors.bottom: parent.bottom
             }
-
-
 
         }
 
