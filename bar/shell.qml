@@ -85,25 +85,25 @@ PanelWindow {
 
                 ///--------------inf_battery----------------///
                 Rectangle {
-                    width: 70
+                    width: 80
                     height: 15
-                    color: Qt.rgba(226/255, 226/255, 46/255, 0) 
+                    color: Qt.rgba(226/255, 226/255, 226/255, 1) 
                     topRightRadius: 15
                     // anchors.left: parent.left
                     // anchors.bottom: parent.bottom
                     Battery_indicator{}
                 }
 
-                ///-------------power_menu------------------///
+                ///-----------heart_indicator---------------///
                 Rectangle {
-                    width: 160
+                    width: 150
                     height: 15
                     color: Qt.rgba(226/255, 226/255, 46/255, 0) 
                     topRightRadius: 15
                     topLeftRadius: 15
                     // anchors.centerIn: parent
                     // anchors.bottom: parent.bottom
-                    Power_menu{}
+                    Herat_indicator{}
                 }
 
                 ///--------------inf_distro-----------------///

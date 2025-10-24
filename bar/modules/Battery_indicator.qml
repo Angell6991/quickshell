@@ -11,11 +11,13 @@ Row {
         id: scriptOutput
         font.family: "frank"
         font.pixelSize: 10
-        color: "#e2e2e2"
+        color: "#2e2e2e"
 
         Process {
             id: myScriptProcess
-            command: ["bash", "-c", "~/.config/quickshell/scripts/battery.sh"]
+            command: [
+                "bash", "-c", "echo $(cat /sys/class/power_supply/BAT0/capacity) :: 100"
+            ]
             running: false
             stdout: StdioCollector {
                 onStreamFinished: scriptOutput.text = this.text
