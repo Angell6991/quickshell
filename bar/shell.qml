@@ -106,23 +106,17 @@ PanelWindow {
                     Herat_indicator{}
                 }
 
-                ///--------------inf_distro-----------------///
+                ///------------menu_indicator---------------///
                 Rectangle {
                     width: 120
                     height: 15
-                    color: Qt.rgba(226/255, 226/255, 266/255, 1) 
+                    color: Qt.rgba(226/255, 226/255, 226/255, 0.5) 
                     topRightRadius: 15
                     topLeftRadius: 15
                     // anchors.right: parent.right
                     // anchors.bottom: parent.bottom
+                    Menu_indicator{}
 
-                    Text{
-                        anchors.centerIn:   parent
-                        font.family: "frank"
-                        font.pixelSize: 10
-                        color: "#2e2e2e"
-                        text: "arch"
-                    }
                 }
             }
 

@@ -6,28 +6,61 @@ import QtQuick.Window
 import QtQuick.Controls 
 
 
-Row{
+Column{
 
-    anchors.bottom: parent.bottom
-    spacing: 20
+    anchors.centerIn: parent
+    spacing: 15
+    
+    ///----------------title--------------------///
+    Button {
+        text: ""
+        width: 40       
+        height: 40      
+        
+        font.family: "warhammer40k"      
+        font.pointSize: 20     
+
+        Component.onCompleted: {
+            contentItem.color = "#2e2e2e"
+        }
+
+        background: Rectangle {
+            color: Qt.rgba(46/255, 46/255, 46/255, 0)
+            radius:10
+        }
+
+        Process {
+            id: exit_init
+            command: ["bash", "-c", "poweroff"]
+            running: false
+            stdout: StdioCollector {
+                onStreamFinished: scriptOutput.text = this.text
+            }
+        }
+
+        onClicked: {
+            Qt.quit()
+            // exit_init.running = true;
+        }
+    }
+
 
     ///---------------poweroff------------------///
     Button {
         text: "⏻ "
-        width: 20       
-        height: 15      
+        width: 40       
+        height: 40      
         
         font.family: "3270 Nerd Font"      
-        font.pointSize: 8     
+        font.pointSize: 20     
 
         Component.onCompleted: {
-            contentItem.color = "#ff69b4"
+            contentItem.color = "#e2e2e2"
         }
 
         background: Rectangle {
-            color: "#161616"     
-            topRightRadius: 5
-            topLeftRadius: 5          
+            color: Qt.rgba(46/255, 46/255, 46/255, 0.8)
+            radius:10
         }
 
         Process {
@@ -48,20 +81,19 @@ Row{
     ///--------------init_hyprlock--------------///
     Button {
         text: "󰷛 "
-        width: 20       
-        height: 15      
+        width: 40       
+        height: 40      
         
         font.family: "3270 Nerd Font"      
-        font.pointSize: 8     
+        font.pointSize: 20     
 
         Component.onCompleted: {
             contentItem.color = "#e2e2e2"
         }
 
         background: Rectangle {
-            color: "#161616"     
-            topRightRadius: 5
-            topLeftRadius: 5        
+            color: Qt.rgba(46/255, 46/255, 46/255, 0.8)
+            radius:10       
         }
 
 
@@ -82,20 +114,19 @@ Row{
     ///--------------close_secion---------------///
     Button {
         text: " "
-        width: 20       
-        height: 15      
+        width: 40       
+        height: 40      
         
         font.family: "3270 Nerd Font"      
-        font.pointSize: 8     
+        font.pointSize: 20     
 
         Component.onCompleted: {
             contentItem.color = "#e2e2e2"
         }
 
         background: Rectangle {
-            color: "#161616"     
-            topRightRadius: 5
-            topLeftRadius: 5               
+            color: Qt.rgba(46/255, 46/255, 46/255, 0.8)
+            radius:10      
         }
 
         Process {
@@ -115,20 +146,19 @@ Row{
     ///-----------------reboot------------------///
     Button {
         text: " "
-        width: 20       
-        height: 15      
+        width: 40       
+        height: 40      
         
         font.family: "3270 Nerd Font"      
-        font.pointSize: 8     
+        font.pointSize: 20     
 
         Component.onCompleted: {
             contentItem.color = "#e2e2e2"
         }
 
         background: Rectangle {
-            color: "#161616"     
-            topRightRadius: 5
-            topLeftRadius: 5              
+            color: Qt.rgba(46/255, 46/255, 46/255, 0.8)
+            radius:10
         }
 
         Process {
