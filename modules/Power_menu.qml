@@ -29,8 +29,18 @@ Row{
             topRightRadius: 5
             topLeftRadius: 5          
         }
-        
+
+        Process {
+            id: poweroff_init
+            command: ["bash", "-c", "poweroff"]
+            running: false
+            stdout: StdioCollector {
+                onStreamFinished: scriptOutput.text = this.text
+            }
+        }
+
         onClicked: {
+            poweroff_init.running = true;
         }
     }
 
@@ -53,8 +63,19 @@ Row{
             topRightRadius: 5
             topLeftRadius: 5        
         }
-        
+
+
+        Process {
+            id: lock_init
+            command: ["bash", "-c", "hyprlock"]
+            running: false
+            stdout: StdioCollector {
+                onStreamFinished: scriptOutput.text = this.text
+            }
+        }
+
         onClicked: {
+            lock_init.running =   true;
         }
     }
 
@@ -76,8 +97,18 @@ Row{
             topRightRadius: 5
             topLeftRadius: 5               
         }
-        
+
+        Process {
+            id: close_secion
+            command: ["bash", "-c", "niri disconnect"]
+            running: false
+            stdout: StdioCollector {
+                onStreamFinished: scriptOutput.text = this.text
+            }
+        }
+
         onClicked: {
+            close_secion.running    =   true;
         }
     }
 
@@ -99,8 +130,18 @@ Row{
             topRightRadius: 5
             topLeftRadius: 5              
         }
-        
+
+        Process {
+            id: rebbot
+            command: ["bash", "-c", "systemctl reboot"]
+            running: false
+            stdout: StdioCollector {
+                onStreamFinished: scriptOutput.text = this.text
+            }
+        }
+
         onClicked: {
+            rebbot.running  =   true;
         }
     }
 
