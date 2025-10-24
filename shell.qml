@@ -103,6 +103,7 @@ PanelWindow {
                     topLeftRadius: 15
                     // anchors.centerIn: parent
                     // anchors.bottom: parent.bottom
+                    Power_menu{}
                 }
 
                 ///--------------inf_distro-----------------///
@@ -114,7 +115,7 @@ PanelWindow {
                     topLeftRadius: 15
                     // anchors.right: parent.right
                     // anchors.bottom: parent.bottom
-                     
+
                     Text{
                         anchors.centerIn:   parent
                         font.family: "frank"
