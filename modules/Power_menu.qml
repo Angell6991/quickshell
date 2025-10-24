@@ -100,7 +100,7 @@ Row{
 
         Process {
             id: close_secion
-            command: ["bash", "-c", "niri disconnect"]
+            command: ["bash", "-c", "loginctl terminate-user $USER"]
             running: false
             stdout: StdioCollector {
                 onStreamFinished: scriptOutput.text = this.text
