@@ -31,15 +31,15 @@ ShellRoot {
 			}
 
 			margins {
-                top:    200
-                bottom: 200
+                top:    210
+                bottom: 210
 			}
 
 			Rectangle {
                 // width: 20
                 // height: 500
 
-                color: Qt.rgba(226/255, 226/255, 226/255, 0.2) 
+                color: Qt.rgba(46/255, 46/255, 46/255, 0.7) 
                 topRightRadius: 15
                 bottomRightRadius: 15
                 anchors.fill: parent
