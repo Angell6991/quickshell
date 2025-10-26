@@ -85,11 +85,11 @@ Column{
 
     ///----------------title--------------------///
     Button {
-        text: ""
+        text: " "
         width: 35       
         height: 45     
         
-        font.family: "warhammer40k"      
+        font.family: "3270 Nerd Font"      
         font.pointSize: 20     
 
         Component.onCompleted: {
